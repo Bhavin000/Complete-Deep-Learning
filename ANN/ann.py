@@ -1,3 +1,4 @@
+                                                ### tensorflow 2.0 ###
 # Artificial Neural Network
 
 
@@ -37,12 +38,8 @@ X_test = sc.transform(X_test)
 # Part 2 - Now let's make the ANN!
 
 # Importing the Keras libraries and packages
-import keras
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LeakyReLU,PReLU,ELU
-from keras.layers import Dropout
-
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
 # Initialising the ANN
 classifier = Sequential()
@@ -65,8 +62,6 @@ model_history=classifier.fit(X_train, y_train,validation_split=0.33, batch_size 
 
 print(model_history.history.keys())
 # summarize history for accuracy
-plt.plot(model_history.history['acc'])
-plt.plot(model_history.history['val_acc'])
 plt.title('model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
@@ -74,8 +69,6 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.show()
 
 # summarize history for loss
-plt.plot(model_history.history['loss'])
-plt.plot(model_history.history['val_loss'])
 plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
